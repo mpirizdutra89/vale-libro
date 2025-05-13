@@ -1,3 +1,19 @@
+
+
+/* Si quieres un gris claro */
+:root {
+  --swiper-navigation-color: #D3D3D3;
+}
+
+
+:root {
+  --swiper-pagination-progressbar-bg-color:  #696969d3;/* Casi blanco semitransparente para el fondo */
+  --swiper-pagination-color:rgba(250, 250, 250, 0.8);  /* Gris oscuro para la barra de llenado (coherente con el diseño) */
+
+}
+
+
+
 html,
 body {
     position: relative;
@@ -5,7 +21,7 @@ body {
 }
 
 body {
-    background:;/* // #eee; */
+    background:#696969;/* // #eee; */
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: #000;
@@ -33,3 +49,4 @@ swiper-slide img {
     height: 100%;
     object-fit: cover;
 }
+
