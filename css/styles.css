@@ -1,0 +1,57 @@
+  body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh;
+  background-color: #f4f4f4;
+}
+
+.libro-contenedor {
+  position: relative;
+  width: 80%;
+  max-width: 1024px;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden; 
+  margin: 20px auto;
+}
+
+.pagina {
+ 
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  height:auto ; 
+}
+
+.pagina img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+#anterior {
+  left: -45px;
+}
+
+#siguiente {
+  right: -45px;
+}
+
+button:hover {
+  background-color: #eee;
+} 

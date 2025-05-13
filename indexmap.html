@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!--   <img src="img/6.png" alt="Imagen de San La Muerte" style="width: 400px; height: auto;">
+    <div id="area-clic-san-la-muerte" style="position: absolute;
+                     left: 245px;  /* Ajusta estos valores para posicionar el div sobre la persona */
+                     top: 40px;
+                     width: 130px; /* Ajusta el ancho y alto para que cubra el área deseada */
+                     height: 250px;
+                     cursor: pointer;
+                     border: 2px solid rgba(255, 0, 0, 0.5); /* Bordes para visualizar el área (opcional) */
+                     border-radius: 10px;
+                     " onclick="mostrarInformacion()" aria-label="Haz clic para ver información sobre San La Muerte"
+        tabindex="0">
+    </div>
+    </div>
+
+    <div id="informacion-san-la-muerte"
+        style="display: none; background-color: rgba(255, 255, 255, 0.8); padding: 20px; margin-top: 20px; width: 300px;">
+        <h3>San La Muerte</h3>
+        <p>San La Muerte es una figura popular en algunas regiones... (Aquí iría la información que quieres mostrar)</p>
+        <button onclick="ocultarInformacion()">Cerrar</button>
+    </div>
+
+    <script>
+        function mostrarInformacion() {
+            document.getElementById("informacion-san-la-muerte").style.display = "block";
+        }
+
+        function ocultarInformacion() {
+            document.getElementById("informacion-san-la-muerte").style.display = "none";
+        }
+    </script> -->
+
+
+    <div style="position: relative; display: inline-block;">
+        <img id="imagen-san-la-muerte" src="img/6.png" alt="Imagen de San La Muerte" style="width: 100%; height: auto;">
+        <div id="area-clic-san-la-muerte" style="position: absolute;
+                     cursor: pointer;
+                     border: 2px solid rgba(255, 0, 0, 0.5); /* Bordes para visualizar el área (opcional) */
+                     border-radius: 10px;
+                     " onclick="mostrarInformacion()" aria-label="Haz clic para ver información sobre San La Muerte"
+            tabindex="0">
+        </div>
+    </div>
+
+    <div id="informacion-san-la-muerte"
+        style="display: none; background-color: rgba(255, 255, 255, 0.8); padding: 20px; margin-top: 20px; width: 300px;">
+        <h3>San La Muerte</h3>
+        <p>San La Muerte es una figura popular en algunas regiones... (Aquí iría la información que quieres mostrar)</p>
+        <button onclick="ocultarInformacion()">Cerrar</button>
+    </div>
+
+    <script>
+        const imagen = document.getElementById('imagen-san-la-muerte');
+        const areaClic = document.getElementById('area-clic-san-la-muerte');
+
+        function actualizarAreaClic() {
+            const imgRect = imagen.getBoundingClientRect();
+            const contenedorRect = imagen.parentElement.getBoundingClientRect();
+
+            // Calcula la posición y el tamaño del área clicable en relación con la imagen
+            const areaLeft = 58.75//((235 / 400) * 100); // Porcentaje basado en el ancho original de la imagen
+            const areaTop = 24.735// ((14000 / 566) / 100) * 100;
+            const areaWidth = 32.5//((130 / 400) * 100);
+            const areaHeight = 65// ((39050 / 566) / 100) * 100;
+            /* left: 58.75%;
+            top: 24.735%;
+            width: 32.5%;
+            height: 68.9929%; */
+
+            areaClic.style.left = `${areaLeft}%`;
+            areaClic.style.top = `${areaTop}%`;
+            areaClic.style.width = `${areaWidth}%`;
+            areaClic.style.height = `${areaHeight}%`;
+        }
+
+        function mostrarInformacion() {
+            document.getElementById("informacion-san-la-muerte").style.display = "block";
+        }
+
+        function ocultarInformacion() {
+            document.getElementById("informacion-san-la-muerte").style.display = "none";
+        }
+
+        // Llama a la función inicialmente y cuando la ventana cambie de tamaño
+        actualizarAreaClic();
+        window.addEventListener('resize', actualizarAreaClic);
+    </script>
+
+
+</body>
+
+</html>
